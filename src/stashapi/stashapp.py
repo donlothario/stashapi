@@ -87,10 +87,10 @@ class StashInterface(GQLWrapper):
             "ScrapedStudio": {"parent": "{ stored_id }"},
             "Tag": {"parents": "{ id }", "children": "{ id }"},
             "Studio": {"parent_studio": "{ id }"},
-            "VideoFile": {"fingerprint": 'fingerprint(type: "SHA256")'},
-            "ImageFile": {"fingerprint": 'fingerprint(type: "SHA256")'},
-            "BasicFile": {"fingerprint": 'fingerprint(type: "SHA256")'},
-            "GalleryFile": {"fingerprint": 'fingerprint(type: "SHA256")'},
+            "VideoFile": {"fingerprint": 'fingerprint(type: "phash")'},
+            "ImageFile": {"fingerprint": 'fingerprint(type: "phash")'},
+            "BasicFile": {"fingerprint": 'fingerprint(type: "phash")'},
+            "GalleryFile": {"fingerprint": 'fingerprint(type: "phash")'},
             "Gallery": {"image": None},
         }
         self.fragments = self._get_fragments_introspection(
